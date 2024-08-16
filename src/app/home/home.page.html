@@ -1,7 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button> 
+    </ion-buttons> 
     <ion-title>
-      Blank
+      Tu Mamita
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +17,8 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <strong>Estas listo para ver a tu Mamita?</strong>
+    <p>Anda a ver a tu mamita <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">Mamita link</a></p>
+    </div>
+    <ion-button color="success"[routerLink]="['/login']">Ir al Login</ion-button>
 </ion-content>
