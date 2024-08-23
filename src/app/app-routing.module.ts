@@ -19,6 +19,11 @@ const routes: Routes = [
     path: 'agregar',
     loadChildren: () => import('./pages/agregar/agregar.module').then( m => m.AgregarPageModule)
   },
+  {
+    path: '**',   //NOT FOUND PAGINA PARA IR EN CASO DE PAGINA NO EXISTENTE
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+
 ];
 
 @NgModule({

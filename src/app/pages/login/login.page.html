@@ -7,7 +7,7 @@
 
 <ion-content [fullscreen]="true">
   <!---BOTONES CAMBIO DE PAGINAS-->
-  <ion-button style="padding: 40px 40px 40px 40px;" color="success"[routerLink]="['/home']">Ir al Home</ion-button>
+  <ion-button style="padding:40px 25px 40px 20px;" color="success"[routerLink]="['/home']">Ir al Home</ion-button>
   <ion-button color="warning"(click)="irPagina()">Ir a Agregar</ion-button> 
 
   <h1 style="display: flex; justify-content: center;">Nombre del Usuario: {{ nombreUsuario }}</h1>
@@ -16,6 +16,17 @@
   <ion-item>
     <ion-input label="Ingrese su usuario:" labelPlacement="floating" 
     placeholder="Ingrese su nombre" [(ngModel)]="nombreUsuario"></ion-input>
+  </ion-item> 
+
+ <!--CONDICION IF-->
+  <p *ngIf="edad < 29">{{ arreglo.nombre | uppercase }}</p>
+  <br>
+
+  <!--CICLO FOR PARA RECORRES-->
+  <ion-item *ngFor="let x of lista">
+    <ion-label><b>ID: {{ x.id }} </b></ion-label>
+    <ion-label><b>Nombre: {{ x.nombre | lowercase }}</b></ion-label>
+
   </ion-item>
 
 </ion-content>

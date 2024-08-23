@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>agregar</ion-title>
+    <ion-title>agregar Context</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button> 
     </ion-buttons> 
@@ -8,5 +8,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button color="warning"[routerLink]="['/home']">Ir al Home</ion-button>
+  <ion-button style="display: flex; justify-content: center; padding: 40px 30px 40px;"  color="warning"[routerLink]="['/home']">Ir al Home</ion-button>
+
+  <h1>{{ Usuario }}</h1>
+  <h1>{{ edad }}</h1>
+  <h1>{{ Comuna }}</h1>
+
 </ion-content>
+

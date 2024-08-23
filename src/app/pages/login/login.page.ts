@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -26,8 +26,16 @@ export class LoginPage implements OnInit {
       nombre:"Maria",
     },
     {
-      id:0,
+      id:2,
       nombre:"Matias"
+    },
+    {
+      id:3,
+      nombre:"Jael"
+    },
+    {
+      id:4,
+      nombre:"Nashe"
     }
   ]
 
@@ -37,8 +45,17 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  
   irPagina(){
+    //CREACION DE VARIABLE CONTEXTO
+    let context: NavigationExtras = {
+      state:{
+        com: this.comuna,
+        ed: this.edad,
+        user: this.nombreUsuario
+      }
+    }
     //Creacion loga de programacion
-    this.router.navigate(['/agregar']);
+    this.router.navigate(['/agregar'],context);
   }
 }
