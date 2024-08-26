@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -41,7 +42,7 @@ export class LoginPage implements OnInit {
 
   //
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private alertController: AlertController, private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -55,7 +56,32 @@ export class LoginPage implements OnInit {
         user: this.nombreUsuario
       }
     }
-    //Creacion loga de programacion
+    
+    //ALERTA TOAST MOMENTANEO
+    this.presentToast('bottom');
+    //ALERTA CON PARAMETROS
+    this.presentAlert('Titulo alerta','Mensjae de la alerta');
+    //MANDAR DATA HACIA LA PAGINA DE VARIABLES DE LOGIN
     this.router.navigate(['/agregar'],context);
+  }
+
+  async presentAlert(titulo:string, msj:string) {
+    const alert = await this.alertController.create({
+      header: 'Soy una alerta',
+      message: 'Bienvenido al programa.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'Wena compare shoroManolo!',
+      duration: 1500,
+      position: position,
+    });
+
+    await toast.present();
   }
 }
